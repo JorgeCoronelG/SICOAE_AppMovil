@@ -11,6 +11,10 @@
     <string name="my_profile">Mi perfil</string>
     <string name="logout">Cerrar sesión</string>
     <string name="user">Usuario</string>
+    <string name="note_forgot_password">Para restablecer la contraseña, introduce la dirección de correo electrónico que utilizas para iniciar sesión</string>
+    <string name="restore">Restablecer</string>
+    <string name="change_password">Cambiar contraseña</string>
+    <string name="reset_password">¡Contraseña restablecida!</string>
 
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -18,8 +22,6 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="accept">Aceptar</string>
 
 </resources>

@@ -11,10 +11,10 @@
 
     <ImageView
         android:id="@+id/img_logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/size_img_title"
+        android:layout_height="@dimen/size_img_title"
         android:src="@drawable/ic_logo"
-        android:layout_marginTop="@dimen/top_img_login"
+        android:layout_marginTop="@dimen/top_img"
         android:layout_centerHorizontal="true"
     />
 
@@ -25,8 +25,8 @@
         android:layout_below="@+id/img_logo"
         android:text="@string/sign_in"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/size_title"
-        android:layout_marginTop="@dimen/top_img_login"
+        android:textSize="@dimen/size_txt_title"
+        android:layout_marginTop="@dimen/top_img"
         android:layout_centerHorizontal="true"
     />
 
@@ -74,7 +74,7 @@
         android:layout_below="@id/btn_sign_in"
         android:layout_centerHorizontal="true"
         android:text="@string/forgot_password"
-        android:textSize="@dimen/size_footer"
+        android:textSize="@dimen/size_txt_footer"
         android:textColor="@color/link"
     />
 
