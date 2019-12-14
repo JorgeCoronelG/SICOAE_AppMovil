@@ -15,6 +15,20 @@
     <string name="restore">Restablecer</string>
     <string name="change_password">Cambiar contraseña</string>
     <string name="reset_password">¡Contraseña restablecida!</string>
+    <string name="accept">Aceptar</string>
+    <string name="select_date">Selecciona una fecha:</string>
+    <string name="student">Estudiante</string>
+    <string name="period">Periodo</string>
+    <string name="note_stadistics">El reporte se enviará a tu correo electrónico</string>
+    <string name="generate">Generar</string>
+    <string name="who_picks_up">¿Quién recoge al estudiante?</string>
+    <string name="complete_name">Nombre completo</string>
+    <string name="access_reference">Referencia de acceso</string>
+    <string name="step_1">Díctale la referencia al vigilante para que entre el estudiante a la institución.</string>
+    <string name="step_2">La referencia es válida únicamente el día que se haya generado.</string>
+    <string name="step_3">Solamente se pueden generar 3 referencias del mismo estudiante por día.</string>
+    <string name="share">Compartir</string>
+    <string name="capture">Captura</string>
 
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -22,11 +36,9 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="accept">Aceptar</string>
-    <string name="select_date">Selecciona una fecha:</string>
-    <string name="student">Estudiante</string>
-    <string name="period">Periodo</string>
-    <string name="note_stadistics">El reporte se enviará a tu correo electrónico</string>
-    <string name="generate">Generar</string>
+    <string name="phone">Teléfono</string>
+    <string name="old_password">Contraseña anterior</string>
+    <string name="required_password_lenght">Mínimo 6 caracteres</string>
+    <string name="new_password">Nueva contraseña</string>
 
 </resources>

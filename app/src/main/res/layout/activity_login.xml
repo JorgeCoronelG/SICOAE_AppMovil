@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:orientation="vertical"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:focusableInTouchMode="true">
 
     <ImageView
         android:id="@+id/img_logo"
