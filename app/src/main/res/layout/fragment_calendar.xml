@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.CalendarFragment">
+        tools:context=".fragments.CalendarFragment"
+        android:background="@color/colorPrimary">
 
     <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Calendario" />
+            android:id="@+id/txt_select_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/llCalendar"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/margin_form"
+            android:text="@string/select_date"
+            android:textSize="@dimen/size_txt_title_h1"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            />
 
-</FrameLayout>
+    <LinearLayout
+            android:id="@+id/llCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_calendar"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_calendar"
+            android:layout_marginLeft="@dimen/margin_form"
+            android:layout_marginRight="@dimen/margin_form"
+            >
+
+        <CalendarView
+                android:id="@+id/calendar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -3,12 +3,15 @@
     <dimen name="top_img">30dp</dimen>
     <dimen name="top_img_success">100dp</dimen>
     <dimen name="margin_form">30dp</dimen>
+    <dimen name="margin_items">15dp</dimen>
 
-    <dimen name="size_txt_title">24sp</dimen>
+    <dimen name="size_txt_title_h1">24sp</dimen>
+    <dimen name="size_txt_title_h2">18sp</dimen>
     <dimen name="size_txt_footer">14sp</dimen>
     <dimen name="size_txt_body">16sp</dimen>
 
     <dimen name="size_img_title">150dp</dimen>
+    <dimen name="size_calendar">300dp</dimen>
 
     <dimen name="rounded">25dp</dimen>
     <dimen name="stroke">1dp</dimen>

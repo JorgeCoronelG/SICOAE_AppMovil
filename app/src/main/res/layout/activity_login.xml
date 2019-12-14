@@ -25,7 +25,7 @@
         android:layout_below="@+id/img_logo"
         android:text="@string/sign_in"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/size_txt_title"
+        android:textSize="@dimen/size_txt_title_h1"
         android:layout_marginTop="@dimen/top_img"
         android:layout_centerHorizontal="true"
     />

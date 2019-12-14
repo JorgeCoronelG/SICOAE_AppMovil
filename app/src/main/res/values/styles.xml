@@ -17,6 +17,10 @@
         <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
+    <style name="SpinnerStyle">
+        <item name="android:background">@drawable/border_spinner</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

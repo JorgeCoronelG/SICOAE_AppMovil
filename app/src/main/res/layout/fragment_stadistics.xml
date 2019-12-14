@@ -1,13 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.StadisticsFragment">
+        tools:context=".fragments.StadisticsFragment"
+        android:orientation="vertical"
+        android:background="@android:color/white">
 
     <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Estadísticas" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/student"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/size_txt_title_h2"
+            android:layout_marginTop="@dimen/margin_form"
+            android:layout_marginLeft="@dimen/margin_form"
+            android:layout_marginRight="@dimen/margin_form"
+        />
 
-</FrameLayout>
+    <Spinner
+            android:id="@+id/spn_student"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_items"
+            android:layout_marginLeft="@dimen/margin_form"
+            android:layout_marginRight="@dimen/margin_form"
+            style="@style/SpinnerStyle"
+        />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/period"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/size_txt_title_h2"
+            android:layout_marginTop="@dimen/margin_form"
+            android:layout_marginLeft="@dimen/margin_form"
+            android:layout_marginRight="@dimen/margin_form"
+            />
+
+    <Spinner
+            android:id="@+id/spn_period"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_items"
+            android:layout_marginLeft="@dimen/margin_form"
+            android:layout_marginRight="@dimen/margin_form"
+            style="@style/SpinnerStyle"
+            />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_form"
+            android:text="@string/note_stadistics"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/size_txt_footer"
+            />
+
+    <Button
+            android:id="@+id/btn_generate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/generate"
+            android:layout_margin="@dimen/margin_form"
+            android:background="@drawable/rounded_button_states"
+            android:textColor="@android:color/white"
+            android:padding="@dimen/padding"
+            />
+
+</LinearLayout>

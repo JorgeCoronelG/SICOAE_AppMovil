@@ -23,5 +23,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="accept">Aceptar</string>
+    <string name="select_date">Selecciona una fecha:</string>
+    <string name="student">Estudiante</string>
+    <string name="period">Periodo</string>
+    <string name="note_stadistics">El reporte se enviará a tu correo electrónico</string>
+    <string name="generate">Generar</string>
 
 </resources>
