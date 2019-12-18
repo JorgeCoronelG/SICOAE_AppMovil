@@ -4,9 +4,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-            android:id="@+id/item_change_password"
-            android:title="Cambiar contraseña"
-            android:icon="@drawable/ic_lock_gray"
+            android:id="@+id/item_historical_references"
+            android:title="Historial"
+            android:icon="@drawable/ic_clipboard"
             app:showAsAction="always" />
 
 </menu>

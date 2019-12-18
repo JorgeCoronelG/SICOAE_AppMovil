@@ -35,7 +35,7 @@
                 android:textColor="@android:color/black"
                 />
 
-        <ScrollView
+        <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/scrollview_dialog_fragment"
                 android:layout_marginTop="@dimen/margin_items">
@@ -52,8 +52,7 @@
 
             </LinearLayout>
 
-
-        </ScrollView>
+        </android.support.v4.widget.NestedScrollView>
 
         <Button
                 android:id="@+id/btn_close"

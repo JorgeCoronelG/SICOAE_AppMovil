@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cv_reference"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_cardview_reference"
+        xmlns:cardview="http://schemas.android.com/apk/res-auto"
+        android:background="@android:color/white">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/border_reference"
+            android:layout_margin="@dimen/margin_items"
+            android:weightSum="8"
+            >
+
+        <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/ic_credential"
+                />
+
+        <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:weightSum="6"
+                android:orientation="vertical"
+                >
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/reference"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/size_txt_footer"
+                    android:textStyle="bold"
+                    android:gravity="bottom|left"
+                    />
+
+            <TextView
+                    android:id="@+id/txt_reference"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:text="20191125LMF83901"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/size_txt_footer"
+                    android:gravity="top|left"
+                    />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/student"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/size_txt_footer"
+                    android:textStyle="bold"
+                    android:gravity="bottom|left"
+                    />
+
+            <TextView
+                    android:id="@+id/txt_student"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:text="Lucía Guadalupe Salinas Reyes"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/size_txt_footer"
+                    android:gravity="top|left"
+                    />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/who_picks_up"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/size_txt_footer"
+                    android:textStyle="bold"
+                    android:gravity="bottom|left"
+                    />
+
+            <TextView
+                    android:id="@+id/txt_person"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:text="María Martínez Álvarez"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/size_txt_footer"
+                    android:gravity="top|left"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="6"
+                android:orientation="vertical"
+                >
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="2"
+                    />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="2"
+                    />
+
+            <ImageView
+                    android:id="@+id/img_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="2"
+                    android:src="@drawable/ic_pencil"
+                    android:padding="@dimen/padding_pencil"
+                    />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

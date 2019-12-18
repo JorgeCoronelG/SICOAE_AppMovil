@@ -1,4 +1,4 @@
-package com.uteq.sicoae.Fragments
+package com.uteq.sicoae.fragments
 
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
@@ -8,9 +8,9 @@ import android.view.*
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.uteq.sicoae.Adapter.RegisterStudentAdapter
-import com.uteq.sicoae.Model.Register
-import com.uteq.sicoae.Model.Student
+import com.uteq.sicoae.adapter.RegisterStudentAdapter
+import com.uteq.sicoae.model.Register
+import com.uteq.sicoae.model.Student
 import com.uteq.sicoae.R
 
 class RegisterStudentDialogFragment : DialogFragment(), View.OnClickListener {

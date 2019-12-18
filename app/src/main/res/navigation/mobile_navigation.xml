@@ -7,7 +7,7 @@
 
     <fragment
             android:id="@+id/nav_home"
-            android:name="com.uteq.sicoae.Fragments.CalendarFragment"
+            android:name="com.uteq.sicoae.fragments.CalendarFragment"
             android:label="@string/calendar"
             tools:layout="@layout/fragment_home" />
 

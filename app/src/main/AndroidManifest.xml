@@ -10,19 +10,25 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".Activities.ChangePasswordActivity"
+                android:name=".activities.EditReferenceActivity"
                 android:screenOrientation="portrait"></activity>
         <activity
-                android:name=".Activities.ReferenceActivity"
+                android:name=".activities.HistoricalReferencesActivity"
                 android:screenOrientation="portrait" />
         <activity
-                android:name=".Activities.SuccessPasswordActivity"
+                android:name=".activities.ChangePasswordActivity"
                 android:screenOrientation="portrait" />
         <activity
-                android:name=".Activities.ForgotPasswordActivity"
+                android:name=".activities.ReferenceActivity"
                 android:screenOrientation="portrait" />
         <activity
-                android:name=".Activities.HomeActivity"
+                android:name=".activities.SuccessPasswordActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".activities.ForgotPasswordActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".activities.HomeActivity"
                 android:label="@string/title_activity_home"
                 android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.NoActionBar" />

@@ -1,4 +1,4 @@
-package com.uteq.sicoae.Communication
+package com.uteq.sicoae.communication
 
 import android.content.Context
 import com.android.volley.Request

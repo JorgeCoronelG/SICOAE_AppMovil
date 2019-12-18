@@ -1,4 +1,4 @@
-package com.uteq.sicoae.Model
+package com.uteq.sicoae.model
 
 class Register(
     var id: Int?,
