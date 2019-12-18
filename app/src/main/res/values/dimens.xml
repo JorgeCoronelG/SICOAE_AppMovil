@@ -7,6 +7,9 @@
     <dimen name="margin_footer_reference">10dp</dimen>
     <dimen name="margin_bottom">60dp</dimen>
     <dimen name="margin_bottom_negative">-60dp</dimen>
+    <dimen name="height_cardview_register_student">125dp</dimen>
+    <dimen name="scrollview_dialog_fragment">250dp</dimen>
+    <dimen name="height_dialog_fragment">500dp</dimen>
 
     <dimen name="size_txt_title_h1">24sp</dimen>
     <dimen name="size_txt_title_h2">18sp</dimen>

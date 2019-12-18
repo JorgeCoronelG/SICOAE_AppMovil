@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.uteq.sicoae.activities.ForgotPasswordActivity
-import com.uteq.sicoae.activities.HomeActivity
+import com.uteq.sicoae.Activities.ForgotPasswordActivity
+import com.uteq.sicoae.Activities.HomeActivity
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 

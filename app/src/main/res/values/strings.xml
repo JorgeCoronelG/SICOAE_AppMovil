@@ -29,6 +29,16 @@
     <string name="step_3">Solamente se pueden generar 3 referencias del mismo estudiante por día.</string>
     <string name="share">Compartir</string>
     <string name="capture">Captura</string>
+    <string name="phone">Teléfono</string>
+    <string name="old_password">Contraseña anterior</string>
+    <string name="required_password_lenght">Mínimo 6 caracteres</string>
+    <string name="new_password">Nueva contraseña</string>
+    <string name="close">Cerrar</string>
+    <string name="monday">Lunes</string>
+    <string name="tuesday">Martes</string>
+    <string name="wednesday">Miércoles</string>
+    <string name="thursday">Jueves</string>
+    <string name="friday">Viernes</string>
 
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -36,9 +46,5 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="phone">Teléfono</string>
-    <string name="old_password">Contraseña anterior</string>
-    <string name="required_password_lenght">Mínimo 6 caracteres</string>
-    <string name="new_password">Nueva contraseña</string>
 
 </resources>

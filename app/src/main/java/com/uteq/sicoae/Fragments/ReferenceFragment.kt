@@ -1,4 +1,4 @@
-package com.uteq.sicoae.fragments
+package com.uteq.sicoae.Fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import android.widget.Button
 import android.widget.Spinner
 
 import com.uteq.sicoae.R
-import com.uteq.sicoae.activities.ReferenceActivity
+import com.uteq.sicoae.Activities.ReferenceActivity
 
 class ReferenceFragment : Fragment(), View.OnClickListener {
 

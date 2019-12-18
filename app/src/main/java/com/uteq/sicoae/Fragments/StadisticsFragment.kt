@@ -1,4 +1,4 @@
-package com.uteq.sicoae.fragments
+package com.uteq.sicoae.Fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

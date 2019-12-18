@@ -1,4 +1,4 @@
-package com.uteq.sicoae.fragments
+package com.uteq.sicoae.Fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.*
 
 import com.uteq.sicoae.R
-import com.uteq.sicoae.activities.ChangePasswordActivity
+import com.uteq.sicoae.Activities.ChangePasswordActivity
 
 class ProfileFragment : Fragment() {
 

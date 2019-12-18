@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+        <TextView
+                android:id="@+id/txt_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_items"
+                android:text="Miércoles"
+                android:textSize="@dimen/size_txt_title_h1"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                />
+
+        <TextView
+                android:id="@+id/txt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_items"
+                android:text="17/12/2019"
+                android:textSize="@dimen/size_txt_title_h2"
+                android:textColor="@android:color/black"
+                />
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/scrollview_dialog_fragment"
+                android:layout_marginTop="@dimen/margin_items">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_students"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <Button
+                android:id="@+id/btn_close"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/close"
+                android:layout_margin="@dimen/margin_form"
+                android:background="@drawable/rounded_button_states"
+                android:textColor="@android:color/white"
+                android:padding="@dimen/padding"
+                />
+
+    </LinearLayout>
+
+</RelativeLayout>

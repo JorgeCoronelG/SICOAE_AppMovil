@@ -1,4 +1,4 @@
-package com.uteq.sicoae.activities
+package com.uteq.sicoae.Activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
