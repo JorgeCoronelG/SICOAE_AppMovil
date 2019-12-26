@@ -9,7 +9,7 @@
     <dimen name="margin_bottom_negative">-60dp</dimen>
     <dimen name="height_cardview_register_student">125dp</dimen>
     <dimen name="height_cardview_student">100dp</dimen>
-    <dimen name="height_cardview_reference">250dp</dimen>
+    <dimen name="height_cardview_reference">200dp</dimen>
     <dimen name="scrollview_dialog_fragment">250dp</dimen>
     <dimen name="height_dialog_fragment">500dp</dimen>
     <dimen name="card_elevation">15dp</dimen>

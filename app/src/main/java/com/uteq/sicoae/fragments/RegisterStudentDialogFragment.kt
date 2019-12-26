@@ -50,11 +50,11 @@ class RegisterStudentDialogFragment : DialogFragment(), View.OnClickListener {
     private fun buildRegisters(): ArrayList<Register>{
         var registers = ArrayList<Register>()
         registers.add(Register(null, null,"Entrada: 08:00 am","Salida: 12:30 pm",
-            Student(null,null,null,"Jorge Coronel González",null,null)))
+            Student(null,null,"Jorge Coronel González",null,null)))
         registers.add(Register(null, null,"Entrada: 07:55 am","Salida: 12:25 pm",
-            Student(null,null,null,"Lucía Guadalupe Salinas Reyes",null,null)))
+            Student(null,null,"Lucía Guadalupe Salinas Reyes",null,null)))
         registers.add(Register(null, null,"Entrada: 07:50 am","Salida: 12:33 pm",
-            Student(null,null,null,"Estefanía Coronel González",null,null)))
+            Student(null,null,"Estefanía Coronel González",null,null)))
         return registers
     }
 

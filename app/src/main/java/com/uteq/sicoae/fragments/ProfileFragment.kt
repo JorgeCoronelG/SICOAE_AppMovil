@@ -34,9 +34,9 @@ class ProfileFragment : Fragment() {
 
     private fun buildStudents(): ArrayList<Student> {
         var students = ArrayList<Student>()
-        students.add(Student(null,null,null,"Jorge Coronel González",null,null))
-        students.add(Student(null,null,null,"Lucía Guadalupe Salinas Reyes",null,null))
-        students.add(Student(null,null,null,"Estefanía Coronel González",null,null))
+        students.add(Student(null,null,"Jorge Coronel González",null,null))
+        students.add(Student(null,null,"Lucía Guadalupe Salinas Reyes",null,null))
+        students.add(Student(null,null,"Estefanía Coronel González",null,null))
         return students
     }
 
