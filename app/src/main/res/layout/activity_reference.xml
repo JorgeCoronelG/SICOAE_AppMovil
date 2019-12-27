@@ -177,7 +177,7 @@
                     android:layout_height="@dimen/size_img_footer"
                     android:layout_weight="1"
                     android:padding="@dimen/margin_footer_reference"
-                    android:src="@drawable/ic_whatsapp"
+                    android:src="@drawable/ic_share"
                     android:layout_gravity="center"
                     />
 

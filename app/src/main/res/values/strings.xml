@@ -39,6 +39,17 @@
     <string name="wednesday">Miércoles</string>
     <string name="thursday">Jueves</string>
     <string name="friday">Viernes</string>
+    <string name="historical">Historial</string>
+    <string name="save">Guardar</string>
+    <string name="screenshot">Captura de pantalla</string>
+    <string name="description_screenshot">Mostrar captura de pantalla</string>
+    <string name="title_notification_screenshot">Captura de pantalla</string>
+    <string name="content_notification_screenshot">Se ha capturado la referencia</string>
+    <string name="required_permission">Permiso requerido</string>
+    <string name="required_permission_text">Se requiere del permiso para el uso correcto de la aplicación</string>
+    <string name="denied_permission">Permiso denegado</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
 
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -46,7 +57,5 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="historical">Historial</string>
-    <string name="save">Guardar</string>
 
 </resources>
