@@ -59,7 +59,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
             //Ya se tiene el permiso
         }else if(ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)){
-            val positiveButton = AlertDialog.Builder(this)
+            AlertDialog.Builder(this)
                 .setTitle(resources.getString(R.string.required_permission))
                 .setMessage(resources.getString(R.string.required_permission_text))
                 .setPositiveButton(resources.getString(R.string.ok), { dialog, which ->

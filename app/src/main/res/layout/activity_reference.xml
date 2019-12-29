@@ -41,7 +41,7 @@
             android:focusable="false"
             android:clickable="false"
 
-            android:text="20191125LMF83901"
+            android:text="20191229ABC12345"
             />
 
     <LinearLayout
@@ -170,7 +170,7 @@
                 android:layout_weight="1"
                 android:weightSum="3"
                 android:orientation="horizontal"
-                android:background="@drawable/border_layout">
+                android:background="@drawable/change_color_layout">
 
             <ImageView
                     android:layout_width="1dp"
@@ -200,7 +200,7 @@
                 android:layout_weight="1"
                 android:weightSum="3"
                 android:orientation="horizontal"
-                android:background="@drawable/border_layout">
+                android:background="@drawable/change_color_layout">
 
             <ImageView
                     android:layout_width="1dp"

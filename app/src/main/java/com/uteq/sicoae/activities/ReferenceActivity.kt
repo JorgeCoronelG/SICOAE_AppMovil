@@ -9,10 +9,10 @@ import android.os.Bundle
 import android.os.Environment
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
-import android.support.v4.content.FileProvider
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.uteq.sicoae.R
@@ -20,17 +20,18 @@ import com.uteq.sicoae.util.Constans
 import com.uteq.sicoae.util.Notification
 import java.io.File
 import java.io.FileOutputStream
-import java.util.*
 
 
-class ReferenceActivity : AppCompatActivity(), View.OnClickListener, MediaScannerConnection.OnScanCompletedListener{
+class ReferenceActivity : AppCompatActivity(), View.OnClickListener{
 
     var llShare: LinearLayout? = null
     var llCapture: LinearLayout? = null
+    var etReference: EditText? = null
     var notification: Notification? = null
-
     var bitmap: Bitmap? = null
     var imageFile: File? = null
+    var share = false
+    var screenshot = false
 
     companion object {
         const val STORAGE_PERMISSION_CODE = 1000
@@ -42,6 +43,7 @@ class ReferenceActivity : AppCompatActivity(), View.OnClickListener, MediaScanne
 
         llShare = findViewById(R.id.ll_share)
         llCapture = findViewById(R.id.ll_capture)
+        etReference = findViewById(R.id.et_reference)
 
         notification = Notification(this)
 
@@ -52,9 +54,13 @@ class ReferenceActivity : AppCompatActivity(), View.OnClickListener, MediaScanne
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.ll_share -> {
-                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show()
+                screenshot = false
+                share = true
+                checkPermission()
             }
             R.id.ll_capture -> {
+                share = false
+                screenshot = true
                 checkPermission()
             }
         }
@@ -62,9 +68,9 @@ class ReferenceActivity : AppCompatActivity(), View.OnClickListener, MediaScanne
 
     fun checkPermission(){
         if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
-            takeScreenshot(R.id.ll_capture)
+            takeScreenshot()
         }else if(ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)){
-            val positiveButton = AlertDialog.Builder(this)
+            AlertDialog.Builder(this)
                 .setTitle(resources.getString(R.string.required_permission))
                 .setMessage(resources.getString(R.string.required_permission_text))
                 .setPositiveButton(resources.getString(R.string.ok), { dialog, which ->
@@ -82,15 +88,15 @@ class ReferenceActivity : AppCompatActivity(), View.OnClickListener, MediaScanne
     override fun onRequestPermissionsResult(requestCode: Int,permissions: Array<out String>,grantResults: IntArray) {
         if(requestCode == STORAGE_PERMISSION_CODE){
             if(grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                takeScreenshot(R.id.ll_capture)
+                takeScreenshot()
             }else{
                 Toast.makeText(this, resources.getString(R.string.denied_permission), Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun takeScreenshot(item: Int){
-        val reference = "referencia_20191125LMF83901"
+    private fun takeScreenshot(){
+        var reference = "referencia_${etReference?.text}"
 
         val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
         path.mkdir()
@@ -100,30 +106,35 @@ class ReferenceActivity : AppCompatActivity(), View.OnClickListener, MediaScanne
         bitmap = Bitmap.createBitmap(v1.drawingCache)
         v1.isDrawingCacheEnabled = false
 
-        imageFile = File(path, "${reference}.png")
+        imageFile = File(path, "${reference}.jpg")
 
         val outputStream = FileOutputStream(imageFile)
         val quality = 100
-        bitmap?.compress(Bitmap.CompressFormat.PNG, quality, outputStream)
+        bitmap?.compress(Bitmap.CompressFormat.JPEG, quality, outputStream)
         outputStream.flush()
         outputStream.close()
 
-        if(item == R.id.ll_capture){
-            MediaScannerConnection.scanFile(this, arrayOf(imageFile?.absolutePath), null, this)
-        }
-    }
-
-    override fun onScanCompleted(path: String?, uri: Uri?) {
-        notification?.createNotification(
-            resources.getString(R.string.screenshot),
-            resources.getString(R.string.description_screenshot),
-            Constans.CHANNEL_ID_SCREENSHOT,
-            R.drawable.notification_screenshot,
-            resources.getString(R.string.title_notification_screenshot),
-            resources.getString(R.string.content_notification_screenshot))
-        notification?.addLargeIconAndStyle(bitmap!!)
-        notification?.clickToImage(imageFile!!)
-        notification?.showNotification(Constans.NOTIFICATION_ID_SCREENSHOT)
+        MediaScannerConnection.scanFile(this, arrayOf(imageFile?.absolutePath), null, { path: String?, uri: Uri? ->
+            if(share){
+                var intent = Intent(Intent.ACTION_SEND)
+                intent.type = "image/*"
+                intent.putExtra(Intent.EXTRA_SUBJECT, resources.getString(R.string.reference))
+                intent.putExtra(Intent.EXTRA_TEXT, resources.getString(R.string.access_reference))
+                intent.putExtra(Intent.EXTRA_STREAM, uri)
+                startActivity(Intent.createChooser(intent, resources.getString(R.string.share)))
+            }else if(screenshot){
+                notification?.createNotification(
+                    resources.getString(R.string.screenshot),
+                    resources.getString(R.string.description_screenshot),
+                    Constans.CHANNEL_ID_SCREENSHOT,
+                    R.drawable.notification_screenshot,
+                    resources.getString(R.string.title_notification_screenshot),
+                    resources.getString(R.string.content_notification_screenshot))
+                notification?.addLargeIconAndStyle(bitmap!!)
+                notification?.clickToImage(imageFile!!)
+                notification?.showNotification(Constans.NOTIFICATION_ID_SCREENSHOT)
+            }
+        })
     }
 
     override fun onBackPressed() {
