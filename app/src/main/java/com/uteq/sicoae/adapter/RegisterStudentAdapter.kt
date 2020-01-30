@@ -9,23 +9,23 @@ import android.widget.TextView
 import com.uteq.sicoae.model.Register
 import com.uteq.sicoae.R
 
-class RegisterStudentAdapter(var registers: ArrayList<Register>?, var resource: Int?, var activity: Activity?) :
+class RegisterStudentAdapter(var registers: ArrayList<Register>, var resource: Int, var activity: Activity) :
     RecyclerView.Adapter<RegisterStudentAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(resource!!, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(resource, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val register = registers?.get(position)
-        holder.name?.text = register?.student?.nombre
-        holder.input?.text = register?.entrada
-        holder.output?.text = register?.salida
+        val register = registers.get(position)
+        holder.name?.text = register.student?.nombre
+        holder.input?.text = register.entrada
+        holder.output?.text = register.salida
     }
 
     override fun getItemCount(): Int {
-        return registers?.size!!
+        return registers.size
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

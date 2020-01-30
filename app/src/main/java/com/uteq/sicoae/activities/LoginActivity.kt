@@ -1,4 +1,4 @@
-package com.uteq.sicoae
+package com.uteq.sicoae.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -7,8 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.uteq.sicoae.activities.ForgotPasswordActivity
-import com.uteq.sicoae.activities.HomeActivity
+import com.uteq.sicoae.R
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 

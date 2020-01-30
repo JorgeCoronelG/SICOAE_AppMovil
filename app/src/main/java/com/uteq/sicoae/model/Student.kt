@@ -4,10 +4,12 @@ class Student(
     var matricula: String?,
     var tarjeta: String?,
     var nombre: String?,
-    var fechaNacimiento: String?,
-    var curp: String?) {
+    var grado: Int?,
+    var grupo: String?,
+    var tutor: Tutor?) {
 
     constructor() : this(
+        null,
         null,
         null,
         null,

@@ -29,7 +29,7 @@ class HistoricalReferencesActivity : AppCompatActivity(), ReferenceAdapter.OnRef
         manager.orientation = LinearLayoutManager.VERTICAL
         recyclerReference?.layoutManager = manager
         buildReferences()
-        val adapter = ReferenceAdapter(references, R.layout.cardview_reference, this, this)
+        val adapter = ReferenceAdapter(references!!, R.layout.cardview_reference, this, this)
         recyclerReference?.adapter = adapter
 
     }

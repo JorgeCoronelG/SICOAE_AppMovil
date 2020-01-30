@@ -1,7 +1,5 @@
 package com.uteq.sicoae.activities
 
-import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -17,13 +15,11 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.widget.Toast
-import com.uteq.sicoae.LoginActivity
 import com.uteq.sicoae.R
 import com.uteq.sicoae.fragments.CalendarFragment
 import com.uteq.sicoae.fragments.ProfileFragment
 import com.uteq.sicoae.fragments.ReferenceFragment
 import com.uteq.sicoae.fragments.StadisticsFragment
-import java.util.jar.Manifest
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
