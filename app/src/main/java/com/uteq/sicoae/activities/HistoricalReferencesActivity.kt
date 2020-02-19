@@ -37,11 +37,11 @@ class HistoricalReferencesActivity : AppCompatActivity(), ReferenceAdapter.OnRef
     private fun buildReferences() {
         references = ArrayList<Reference>()
         references?.add(Reference("20191125LMF83901",null,null,"María Martínez Álvarez",
-            Student(null,null,"Jorge Coronel González",null,null)))
+            Student(null,null,"Jorge Coronel González",null, null,null)))
         references?.add(Reference("20191125LMF83902",null,null,"María Martínez Álvarez",
-            Student(null,null,"Lucía Guadalupe Salinas Reyes",null,null)))
+            Student(null,null,"Lucía Guadalupe Salinas Reyes",null,null,null)))
         references?.add(Reference("20191125LMF83903",null,null,"María Martínez Álvarez",
-            Student(null,null,"Estefanía Coronel González",null,null)))
+            Student(null,null,"Estefanía Coronel González",null,null,null)))
     }
 
     private fun showToolbar(title: String, upButton: Boolean) {

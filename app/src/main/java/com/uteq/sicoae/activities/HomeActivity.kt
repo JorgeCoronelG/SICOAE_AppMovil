@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.widget.Toast
 import com.uteq.sicoae.R
+import com.uteq.sicoae.controller.UserController
 import com.uteq.sicoae.fragments.CalendarFragment
 import com.uteq.sicoae.fragments.ProfileFragment
 import com.uteq.sicoae.fragments.ReferenceFragment
@@ -27,6 +28,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     companion object {
         const val STORAGE_PERMISSION_CODE = 1000
     }
+
+    private var userController: UserController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +43,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer.addDrawerListener(toggle)
         toggle.syncState()
         navigationView.setNavigationItemSelectedListener(this)
+
+        userController = UserController(this, null)
 
         var intent = intent
         if(intent != null){
@@ -93,6 +98,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_reference -> fragment = ReferenceFragment()
             R.id.nav_profile -> fragment = ProfileFragment()
             R.id.nav_logout -> {
+                userController?.logout()
                 var intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()

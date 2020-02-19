@@ -1,17 +1,8 @@
 package com.uteq.sicoae.model
 
 class Reference(
-    var id: String?,
-    var fecha: String?,
-    var estatus: Int?,
-    var persona: String?,
-    var student: Student?) {
-
-    constructor() : this(
-        null,
-        null,
-        null,
-        null,
-        null
-    )
-}
+    var id: String? = null,
+    var fecha: String? = null,
+    var estatus: Int? = null,
+    var persona: String? = null,
+    var student: Student? = null)

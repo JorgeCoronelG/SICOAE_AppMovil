@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "120784384451",
+    "firebase_url": "https://sicoae.firebaseio.com",
+    "project_id": "sicoae",
+    "storage_bucket": "sicoae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120784384451:android:8410ad4e382dad624e8d76",
+        "android_client_info": {
+          "package_name": "com.uteq.sicoae"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120784384451-kou4jtg3fdg169fgi8da8bljiuqe6es4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uteq.sicoae",
+            "certificate_hash": "f5b8beff239f4939f98a14ac1f1d5113220cb450"
+          }
+        },
+        {
+          "client_id": "120784384451-kbfmakm8bsfarbrhoqh3fssii73vvuam.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9zkxm3lUsIzovYX37ljMZME9COBkx1ms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120784384451-kbfmakm8bsfarbrhoqh3fssii73vvuam.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

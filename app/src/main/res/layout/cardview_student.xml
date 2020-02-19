@@ -56,11 +56,12 @@
                     />
 
             <TextView
+                    android:id="@+id/txt_scholarship"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:gravity=""
-                    android:text="@string/student"
+                    android:text="@string/scholarship"
                     android:textSize="@dimen/size_txt_footer"
                     android:textColor="@color/text_hint"
                     />

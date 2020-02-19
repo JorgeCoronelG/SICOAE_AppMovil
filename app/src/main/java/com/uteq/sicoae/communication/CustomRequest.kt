@@ -4,9 +4,8 @@ import android.content.Context
 import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.StringRequest
+import com.uteq.sicoae.listener.VolleyListener
 import org.json.JSONObject
-
 
 class CustomRequest(val context: Context, val listener: VolleyListener) : Response.Listener<JSONObject>, Response.ErrorListener{
 
@@ -23,11 +22,6 @@ class CustomRequest(val context: Context, val listener: VolleyListener) : Respon
 
     override fun onErrorResponse(error: VolleyError?) {
         listener.onError(error.toString())
-    }
-
-    interface VolleyListener{
-        fun onSuccess(response: JSONObject)
-        fun onError(error: String)
     }
 
 }

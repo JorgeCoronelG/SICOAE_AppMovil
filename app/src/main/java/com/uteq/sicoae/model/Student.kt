@@ -1,20 +1,9 @@
 package com.uteq.sicoae.model
 
 class Student(
-    var matricula: String?,
-    var tarjeta: String?,
-    var nombre: String?,
-    var grado: Int?,
-    var grupo: String?,
-    var tutor: Tutor?) {
-
-    constructor() : this(
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-    )
-
-}
+    var matricula: String? = null,
+    var tarjeta: String? = null,
+    var nombre: String? = null,
+    var grado: Int? = null,
+    var grupo: String? = null,
+    var tutor: Tutor? = null)

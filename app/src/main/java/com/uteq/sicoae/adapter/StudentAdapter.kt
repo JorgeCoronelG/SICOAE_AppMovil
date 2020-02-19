@@ -20,6 +20,7 @@ class StudentAdapter(var students: ArrayList<Student>, var resource: Int, var ac
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val student = students.get(position)
         holder.name?.text = student.nombre
+        holder.scholarship?.text = "${student.grado}°${student.grupo}"
     }
 
     override fun getItemCount(): Int {
@@ -30,9 +31,11 @@ class StudentAdapter(var students: ArrayList<Student>, var resource: Int, var ac
 
         var view = itemView
         var name: TextView? = null
+        var scholarship: TextView? = null
 
         init {
             name = view.findViewById(R.id.txt_name)
+            scholarship = view.findViewById(R.id.txt_scholarship)
         }
 
     }
