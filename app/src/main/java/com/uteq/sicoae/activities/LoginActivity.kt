@@ -13,6 +13,7 @@ import com.uteq.sicoae.R
 import com.uteq.sicoae.communication.CommunicationPath
 import com.uteq.sicoae.controller.UserController
 import com.uteq.sicoae.listener.DataListener
+import com.uteq.sicoae.model.User
 import dmax.dialog.SpotsDialog
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener, DataListener {
@@ -50,9 +51,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, DataListener {
             R.id.btn_sign_in -> {
                 if(checkFields()){
                     createDialog()
-                    val correo = etEmail?.text.toString()
-                    val clave = etPassword?.text.toString()
-                    userController?.login(correo, clave)
+                    var user = User(etEmail?.text.toString(), etPassword?.text.toString())
+                    userController?.login(user)
                 }
             }
             R.id.txt_forgot_password -> {

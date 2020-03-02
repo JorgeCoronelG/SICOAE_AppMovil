@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="3"
+            android:weightSum="5"
             android:layout_marginTop="@dimen/margin_form"
             android:layout_marginLeft="@dimen/margin_items"
             android:layout_marginRight="@dimen/margin_items"
@@ -25,12 +25,11 @@
                 />
 
         <TextView
-                android:id="@+id/txt_tutor"
+                android:id="@+id/txt_name"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:gravity="left|center_vertical"
-                android:text="Tutor 1"
                 android:textSize="@dimen/size_txt_title_h2"
                 android:textColor="@android:color/black"
                 />
@@ -41,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="3"
+            android:weightSum="5"
             android:layout_marginLeft="@dimen/margin_items"
             android:layout_marginRight="@dimen/margin_items"
             >
@@ -55,7 +54,7 @@
         <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:gravity=""
                 android:text="@string/complete_name"
                 android:textSize="@dimen/size_txt_footer"
@@ -68,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="3"
+            android:weightSum="5"
             android:layout_marginTop="@dimen/margin_items"
             android:layout_marginLeft="@dimen/margin_items"
             android:layout_marginRight="@dimen/margin_items"
@@ -85,9 +84,8 @@
                 android:id="@+id/txt_phone"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:gravity="left|center_vertical"
-                android:text="4422334455"
                 android:textSize="@dimen/size_txt_title_h2"
                 android:textColor="@android:color/black"
                 />
@@ -98,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="3"
+            android:weightSum="5"
             android:layout_marginLeft="@dimen/margin_items"
             android:layout_marginRight="@dimen/margin_items"
             >
@@ -112,7 +110,7 @@
         <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:gravity=""
                 android:text="@string/phone"
                 android:textSize="@dimen/size_txt_footer"
@@ -125,7 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="3"
+            android:weightSum="5"
             android:layout_marginTop="@dimen/margin_items"
             android:layout_marginLeft="@dimen/margin_items"
             android:layout_marginRight="@dimen/margin_items"
@@ -142,9 +140,8 @@
                 android:id="@+id/txt_email"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:gravity="left|center_vertical"
-                android:text="tutor@gmail.com"
                 android:textSize="@dimen/size_txt_title_h2"
                 android:textColor="@android:color/black"
                 />
@@ -155,7 +152,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="3"
+            android:weightSum="5"
             android:layout_marginLeft="@dimen/margin_items"
             android:layout_marginRight="@dimen/margin_items"
             >
@@ -169,7 +166,7 @@
         <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:gravity=""
                 android:text="@string/email"
                 android:textSize="@dimen/size_txt_footer"

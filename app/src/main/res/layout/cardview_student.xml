@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="3"
+                android:weightSum="5"
                 >
 
             <ImageView
@@ -33,9 +33,8 @@
                     android:id="@+id/txt_name"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight="4"
                     android:gravity="left|center_vertical"
-                    android:text="Alejandro Olivarez Martínez"
                     android:textSize="@dimen/size_txt_title_h2"
                     android:textColor="@android:color/black"
                     />
@@ -46,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="3"
+                android:weightSum="5"
                 >
 
             <TextView
@@ -59,9 +58,7 @@
                     android:id="@+id/txt_scholarship"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:gravity=""
-                    android:text="@string/scholarship"
+                    android:layout_weight="4"
                     android:textSize="@dimen/size_txt_footer"
                     android:textColor="@color/text_hint"
                     />

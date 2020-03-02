@@ -38,7 +38,7 @@ class TokenController(val context: Context, val listener: DataListener?) : Volle
         var params = JSONObject()
         params.put("id", token.tutor!!.id)
         params.put("token", token.token)
-        val url = CommunicationPath.SERVER.getPath() + CommunicationPath.UPDATE_TOKEN.getPath()
+        val url = CommunicationPath.UPDATE_TOKEN.getPath()
         request?.createRequest(Request.Method.POST, url, params)
     }
 

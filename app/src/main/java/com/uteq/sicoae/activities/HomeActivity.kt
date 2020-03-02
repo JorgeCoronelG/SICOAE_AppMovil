@@ -52,7 +52,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         userController = UserController(this, this)
         tokenController = TokenController(this, this)
-        createDialog()
         tokenController?.update(tokenController!!.get())
 
         var intent = intent
@@ -129,10 +128,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun success(code: Int, obj: Object?) {
-        dialog?.dismiss()
         when(code){
             CommunicationPath.UPDATE_TOKEN.index -> {
-                Toast.makeText(this, resources.getString(R.string.update_token_successful), Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, resources.getString(R.string.update_token_successful), Toast.LENGTH_SHORT).show()
                 checkPermission()
             }
             CommunicationPath.LOGOUT.index -> {
@@ -144,7 +142,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun error(error: String) {
-        dialog?.dismiss()
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
         checkPermission()
     }

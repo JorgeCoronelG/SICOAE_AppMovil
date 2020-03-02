@@ -18,7 +18,6 @@
     <string name="accept">Aceptar</string>
     <string name="select_date">Selecciona una fecha:</string>
     <string name="student">Estudiante</string>
-    <string name="scholarship">1°A</string>
     <string name="period">Periodo</string>
     <string name="note_stadistics">El reporte se enviará a tu correo electrónico</string>
     <string name="generate">Generar</string>
@@ -52,9 +51,11 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>
     <string name="required_email">Correo electrónico requerido</string>
+    <string name="required_field">Campo requerido</string>
     <string name="required_password">Contraseña requerida</string>
     <string name="wait_a_moment">Espere un momento</string>
     <string name="update_token_successful">Token actualizado correctamente</string>
+    <string name="update_password_succesful">Contraseña actualizada correctamente</string>
 
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

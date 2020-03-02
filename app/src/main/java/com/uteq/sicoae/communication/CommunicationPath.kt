@@ -7,6 +7,8 @@ enum class CommunicationPath(val index: Int) {
     LOGOUT(2),
     RESET_PASSWORD(3),
     UPDATE_TOKEN(4),
+    GET_TUTOR(5),
+    CHANGE_PASSWORD(6),
     ERROR(404);
 
     fun getPath(): String{
@@ -17,7 +19,11 @@ enum class CommunicationPath(val index: Int) {
             LOGOUT.index -> path = "token/delete/"
             RESET_PASSWORD.index -> path = "usuario/reset/password/"
             UPDATE_TOKEN.index -> path = "token/update"
+            GET_TUTOR.index -> path = "tutor/get/"
+            CHANGE_PASSWORD.index -> path = "usuario/change/password"
         }
+        if(index != 0) path = SERVER.getPath() + path
+
         return path
     }
 

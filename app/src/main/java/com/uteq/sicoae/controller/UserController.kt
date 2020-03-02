@@ -20,17 +20,26 @@ class UserController(val context: Context, val listener: DataListener?) : Volley
         request = CustomRequest(context, this)
     }
 
-    fun login(correo: String, clave: String){
+    fun login(user: User){
         var params = JSONObject()
-        params.put("correo", correo)
-        params.put("clave", clave)
-        val url = CommunicationPath.SERVER.getPath() + CommunicationPath.LOGIN.getPath()
+        params.put("correo", user.correo)
+        params.put("clave", user.clave)
+        val url = CommunicationPath.LOGIN.getPath()
         request?.createRequest(Request.Method.POST, url, params)
     }
 
     fun resetPassword(correo: String){
-        val url = CommunicationPath.SERVER.getPath() + CommunicationPath.RESET_PASSWORD.getPath() + correo
+        val url = CommunicationPath.RESET_PASSWORD.getPath() + correo
         request?.createRequest(Request.Method.GET, url, null)
+    }
+
+    fun changePassword(user: User, newClave: String){
+        var params = JSONObject()
+        params.put("correo", user.correo)
+        params.put("oldClave", user.clave)
+        params.put("newClave", newClave)
+        val url = CommunicationPath.CHANGE_PASSWORD.getPath()
+        request?.createRequest(Request.Method.POST, url, params)
     }
 
     fun isLogged(): Boolean{
@@ -41,7 +50,7 @@ class UserController(val context: Context, val listener: DataListener?) : Volley
     fun logout(){
         var preferences = context.getSharedPreferences(Constans.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
         val id = preferences.getInt(Constans.KEY_ACCESS_ID, 0)
-        val url = CommunicationPath.SERVER.getPath() + CommunicationPath.LOGOUT.getPath() + id
+        val url = CommunicationPath.LOGOUT.getPath() + id
         request?.createRequest(Request.Method.GET, url, null)
     }
 
@@ -59,6 +68,7 @@ class UserController(val context: Context, val listener: DataListener?) : Volley
                 listener?.success(CommunicationPath.LOGOUT.index, null)
             }
             CommunicationPath.RESET_PASSWORD.index -> listener?.success(CommunicationPath.RESET_PASSWORD.index, null)
+            CommunicationPath.CHANGE_PASSWORD.index -> listener?.success(CommunicationPath.CHANGE_PASSWORD.index, null)
             CommunicationPath.ERROR.index -> listener?.error(response.getString("error"))
         }
     }

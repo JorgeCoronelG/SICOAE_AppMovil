@@ -1,43 +1,47 @@
 package com.uteq.sicoae.fragments
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.view.*
+import android.widget.TextView
+import android.widget.Toast
 
 import com.uteq.sicoae.R
 import com.uteq.sicoae.activities.ChangePasswordActivity
+import com.uteq.sicoae.activities.HomeActivity
 import com.uteq.sicoae.adapter.StudentAdapter
+import com.uteq.sicoae.communication.CommunicationPath
+import com.uteq.sicoae.controller.TutorController
+import com.uteq.sicoae.listener.DataListener
 import com.uteq.sicoae.model.Student
+import com.uteq.sicoae.model.Tutor
+import dmax.dialog.SpotsDialog
 import java.util.ArrayList
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : Fragment(), DataListener {
 
-    private var recyclerStudents: androidx.recyclerview.widget.RecyclerView? = null
+    private var recyclerStudents: RecyclerView? = null
+    private var tutorController: TutorController? = null
+    private var dialog: AlertDialog? = null
+    private var txtName: TextView? = null
+    private var txtPhone: TextView? = null
+    private var txtEmail: TextView? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
-
+        txtName = view.findViewById(R.id.txt_name)
+        txtPhone = view.findViewById(R.id.txt_phone)
+        txtEmail = view.findViewById(R.id.txt_email)
         recyclerStudents = view.findViewById(R.id.recycler_students)
-
-        var manager = androidx.recyclerview.widget.LinearLayoutManager(context)
-        manager.orientation = androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
-        recyclerStudents?.layoutManager = manager
-        val adapter = StudentAdapter(buildStudents(), R.layout.cardview_student, activity!!)
-        recyclerStudents?.adapter = adapter
-
+        tutorController = TutorController(context!!, this)
+        createDialog()
+        tutorController?.get()
         setHasOptionsMenu(true)
         return view;
-    }
-
-    private fun buildStudents(): ArrayList<Student> {
-        var students = ArrayList<Student>()
-        students.add(Student(null,null,"Jorge Coronel González",1,"A",null))
-        students.add(Student(null,null,"Lucía Guadalupe Salinas Reyes",2,"B",null))
-        students.add(Student(null,null,"Estefanía Coronel González",3,"C",null))
-        return students
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -53,12 +57,44 @@ class ProfileFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
             R.id.item_change_password -> {
-                val intent = Intent(context, ChangePasswordActivity::class.java)
+                var intent = Intent(context, ChangePasswordActivity::class.java)
+                intent.putExtra("correo", txtEmail?.text)
                 startActivity(intent)
                 activity?.finish()
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun success(code: Int, obj: Object?) {
+        dialog?.dismiss()
+        when(code){
+            CommunicationPath.GET_TUTOR.index -> {
+                val tutor = obj as Tutor
+                txtName?.text = tutor.nombre
+                txtPhone?.text = tutor.telefono
+                txtEmail?.text = tutor.usuario?.correo
+                var manager = LinearLayoutManager(context)
+                manager.orientation = LinearLayoutManager.VERTICAL
+                recyclerStudents?.layoutManager = manager
+                val adapter = StudentAdapter(tutor.estudiantes!!, R.layout.cardview_student, activity!!)
+                recyclerStudents?.adapter = adapter
+            }
+        }
+    }
+
+    override fun error(error: String) {
+        dialog?.dismiss()
+        Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
+    }
+
+    fun createDialog(){
+        dialog = SpotsDialog.Builder()
+            .setContext(context)
+            .setMessage(resources.getString(R.string.wait_a_moment))
+            .setCancelable(false)
+            .build()
+        dialog!!.show()
     }
 
 }
