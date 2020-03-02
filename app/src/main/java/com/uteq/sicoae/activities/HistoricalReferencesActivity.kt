@@ -1,11 +1,11 @@
 package com.uteq.sicoae.activities
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.Toolbar
 import android.util.Log
 import com.uteq.sicoae.R
 import com.uteq.sicoae.adapter.ReferenceAdapter
@@ -15,7 +15,7 @@ import com.uteq.sicoae.model.Student
 class HistoricalReferencesActivity : AppCompatActivity(), ReferenceAdapter.OnReferenceListener {
 
     private var toolbar: Toolbar? = null
-    private var recyclerReference: RecyclerView? = null
+    private var recyclerReference: androidx.recyclerview.widget.RecyclerView? = null
     private var references: ArrayList<Reference>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +25,8 @@ class HistoricalReferencesActivity : AppCompatActivity(), ReferenceAdapter.OnRef
 
         recyclerReference = findViewById(R.id.recycler_references)
 
-        var manager = LinearLayoutManager(this)
-        manager.orientation = LinearLayoutManager.VERTICAL
+        var manager = androidx.recyclerview.widget.LinearLayoutManager(this)
+        manager.orientation = androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
         recyclerReference?.layoutManager = manager
         buildReferences()
         val adapter = ReferenceAdapter(references!!, R.layout.cardview_reference, this, this)

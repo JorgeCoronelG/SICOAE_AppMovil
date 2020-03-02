@@ -1,7 +1,7 @@
 package com.uteq.sicoae.adapter
 
 import android.app.Activity
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +10,7 @@ import com.uteq.sicoae.model.Student
 import com.uteq.sicoae.R
 
 class StudentAdapter(var students: ArrayList<Student>, var resource: Int, var activity: Activity) :
-    RecyclerView.Adapter<StudentAdapter.ViewHolder>(){
+    androidx.recyclerview.widget.RecyclerView.Adapter<StudentAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(resource, parent, false)
@@ -27,7 +27,7 @@ class StudentAdapter(var students: ArrayList<Student>, var resource: Int, var ac
         return students.size
     }
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView){
 
         var view = itemView
         var name: TextView? = null

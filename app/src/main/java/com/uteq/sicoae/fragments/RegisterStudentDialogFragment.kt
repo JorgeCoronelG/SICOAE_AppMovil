@@ -1,9 +1,9 @@
 package com.uteq.sicoae.fragments
 
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.DialogFragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.*
 import android.widget.Button
 import android.widget.LinearLayout
@@ -20,7 +20,7 @@ class RegisterStudentDialogFragment : DialogFragment(), View.OnClickListener {
     private var txtDate: TextView? = null
     private var dayOfWeek: String? = null
     private var date: String? = null
-    private var recyclerStudents: RecyclerView? = null
+    private var recyclerStudents: androidx.recyclerview.widget.RecyclerView? = null
 
     val TAG = RegisterStudentDialogFragment::class.simpleName
 
@@ -38,8 +38,8 @@ class RegisterStudentDialogFragment : DialogFragment(), View.OnClickListener {
 
         btnClose?.setOnClickListener(this)
 
-        var manager = LinearLayoutManager(context)
-        manager.orientation = LinearLayoutManager.VERTICAL
+        var manager = androidx.recyclerview.widget.LinearLayoutManager(context)
+        manager.orientation = androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
         recyclerStudents?.layoutManager = manager
         val adapter = RegisterStudentAdapter(buildRegisters(), R.layout.cardview_register_student, activity!!)
         recyclerStudents?.adapter = adapter

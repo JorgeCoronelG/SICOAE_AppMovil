@@ -10,8 +10,8 @@ import android.graphics.Color
 import android.media.AudioAttributes
 import android.media.RingtoneManager
 import android.net.Uri
-import android.support.v4.app.NotificationCompat
-import android.support.v4.content.FileProvider
+import androidx.core.app.NotificationCompat
+import androidx.core.content.FileProvider
 import com.uteq.sicoae.R
 import java.io.File
 

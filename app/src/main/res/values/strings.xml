@@ -54,6 +54,7 @@
     <string name="required_email">Correo electrónico requerido</string>
     <string name="required_password">Contraseña requerida</string>
     <string name="wait_a_moment">Espere un momento</string>
+    <string name="update_token_successful">Token actualizado correctamente</string>
 
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

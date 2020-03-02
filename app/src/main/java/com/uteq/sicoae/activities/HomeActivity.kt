@@ -3,33 +3,39 @@ package com.uteq.sicoae.activities
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import android.support.v4.app.ActivityCompat
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
-import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import com.google.android.material.navigation.NavigationView
+import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
+import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import android.view.MenuItem
 import android.widget.Toast
 import com.uteq.sicoae.R
+import com.uteq.sicoae.communication.CommunicationPath
+import com.uteq.sicoae.controller.TokenController
 import com.uteq.sicoae.controller.UserController
 import com.uteq.sicoae.fragments.CalendarFragment
 import com.uteq.sicoae.fragments.ProfileFragment
 import com.uteq.sicoae.fragments.ReferenceFragment
 import com.uteq.sicoae.fragments.StadisticsFragment
+import com.uteq.sicoae.listener.DataListener
+import dmax.dialog.SpotsDialog
 
 
-class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, DataListener {
 
     companion object {
         const val STORAGE_PERMISSION_CODE = 1000
     }
 
     private var userController: UserController? = null
+    private var tokenController: TokenController? = null
+    private var dialog: android.app.AlertDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +50,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
         navigationView.setNavigationItemSelectedListener(this)
 
-        userController = UserController(this, null)
+        userController = UserController(this, this)
+        tokenController = TokenController(this, this)
+        createDialog()
+        tokenController?.update(tokenController!!.get())
 
         var intent = intent
         if(intent != null){
@@ -53,7 +62,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             displaySelectedScreen(section)
         }
 
-        checkPermission()
     }
 
     fun checkPermission(){
@@ -98,10 +106,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_reference -> fragment = ReferenceFragment()
             R.id.nav_profile -> fragment = ProfileFragment()
             R.id.nav_logout -> {
+                createDialog()
                 userController?.logout()
-                var intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
             }
         }
 
@@ -120,5 +126,35 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else {
             super.onBackPressed()
         }
+    }
+
+    override fun success(code: Int, obj: Object?) {
+        dialog?.dismiss()
+        when(code){
+            CommunicationPath.UPDATE_TOKEN.index -> {
+                Toast.makeText(this, resources.getString(R.string.update_token_successful), Toast.LENGTH_SHORT).show()
+                checkPermission()
+            }
+            CommunicationPath.LOGOUT.index -> {
+                var intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+    }
+
+    override fun error(error: String) {
+        dialog?.dismiss()
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+        checkPermission()
+    }
+
+    fun createDialog(){
+        dialog = SpotsDialog.Builder()
+            .setContext(this)
+            .setMessage(resources.getString(R.string.wait_a_moment))
+            .setCancelable(false)
+            .build()
+        dialog!!.show()
     }
 }

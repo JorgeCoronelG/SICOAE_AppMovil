@@ -2,9 +2,9 @@ package com.uteq.sicoae.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.*
 
 import com.uteq.sicoae.R
@@ -15,15 +15,15 @@ import java.util.ArrayList
 
 class ProfileFragment : Fragment() {
 
-    private var recyclerStudents: RecyclerView? = null
+    private var recyclerStudents: androidx.recyclerview.widget.RecyclerView? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
         recyclerStudents = view.findViewById(R.id.recycler_students)
 
-        var manager = LinearLayoutManager(context)
-        manager.orientation = LinearLayoutManager.VERTICAL
+        var manager = androidx.recyclerview.widget.LinearLayoutManager(context)
+        manager.orientation = androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
         recyclerStudents?.layoutManager = manager
         val adapter = StudentAdapter(buildStudents(), R.layout.cardview_student, activity!!)
         recyclerStudents?.adapter = adapter

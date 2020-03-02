@@ -1,7 +1,7 @@
 package com.uteq.sicoae.adapter
 
 import android.app.Activity
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +11,7 @@ import com.uteq.sicoae.R
 import com.uteq.sicoae.model.Reference
 
 class ReferenceAdapter(var references: ArrayList<Reference>, var resource: Int, var activity: Activity, var onReferenceListener: OnReferenceListener) :
-    RecyclerView.Adapter<ReferenceAdapter.ViewHolder>(){
+    androidx.recyclerview.widget.RecyclerView.Adapter<ReferenceAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(resource, parent, false)
@@ -29,7 +29,7 @@ class ReferenceAdapter(var references: ArrayList<Reference>, var resource: Int, 
         return references.size
     }
 
-    inner class ViewHolder(itemView: View, onReferenceListener: OnReferenceListener) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
+    inner class ViewHolder(itemView: View, onReferenceListener: OnReferenceListener) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener{
 
         var view = itemView
         var reference: TextView? = null

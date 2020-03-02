@@ -8,11 +8,11 @@ import com.uteq.sicoae.communication.CustomRequest
 import com.uteq.sicoae.listener.DataListener
 import com.uteq.sicoae.listener.VolleyListener
 import com.uteq.sicoae.model.Tutor
+import com.uteq.sicoae.model.User
 import com.uteq.sicoae.util.Constans
 import org.json.JSONObject
 
 class UserController(val context: Context, val listener: DataListener?) : VolleyListener {
-
 
     var request: CustomRequest? = null
 
@@ -28,35 +28,39 @@ class UserController(val context: Context, val listener: DataListener?) : Volley
         request?.createRequest(Request.Method.POST, url, params)
     }
 
-    override fun onSuccess(response: JSONObject) {
-        when(response.getInt("code")){
-            CommunicationPath.LOGIN.index -> {
-                saveTutor(response.getInt("id"))
-                listener?.success(CommunicationPath.LOGIN.index, null)
-            }
-            CommunicationPath.ERROR.index -> {
-                listener?.error(response.getString("error"))
-            }
-        }
-    }
-
-    fun saveTutor(id: Int){
-        var preferences = context.getSharedPreferences(Constans.SHARED_PREFERENCES, Context.MODE_PRIVATE)
-        var editor = preferences.edit()
-        editor.putInt("id", id)
-        editor.commit()
+    fun resetPassword(correo: String){
+        val url = CommunicationPath.SERVER.getPath() + CommunicationPath.RESET_PASSWORD.getPath() + correo
+        request?.createRequest(Request.Method.GET, url, null)
     }
 
     fun isLogged(): Boolean{
-        var preferences = context.getSharedPreferences(Constans.SHARED_PREFERENCES, Context.MODE_PRIVATE)
-        if(preferences.getInt("id", 0) != 0) return true else return false
+        var preferences = context.getSharedPreferences(Constans.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+        if(preferences.getInt(Constans.KEY_ACCESS_ID, 0) != 0) return true else return false
     }
 
     fun logout(){
-        var preferences = context.getSharedPreferences(Constans.SHARED_PREFERENCES, Context.MODE_PRIVATE)
-        var editor = preferences.edit()
-        editor.putInt("id", 0)
-        editor.commit()
+        var preferences = context.getSharedPreferences(Constans.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+        val id = preferences.getInt(Constans.KEY_ACCESS_ID, 0)
+        val url = CommunicationPath.SERVER.getPath() + CommunicationPath.LOGOUT.getPath() + id
+        request?.createRequest(Request.Method.GET, url, null)
+    }
+
+    override fun onSuccess(response: JSONObject) {
+        when(response.getInt("code")){
+            CommunicationPath.LOGIN.index -> {
+                TutorController(context, null).storeTutor(response.getInt("id"))
+                listener?.success(CommunicationPath.LOGIN.index, null)
+            }
+            CommunicationPath.LOGOUT.index -> {
+                var preferences = context.getSharedPreferences(Constans.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+                var editor = preferences.edit()
+                editor.putInt(Constans.KEY_ACCESS_ID, 0)
+                editor.commit()
+                listener?.success(CommunicationPath.LOGOUT.index, null)
+            }
+            CommunicationPath.RESET_PASSWORD.index -> listener?.success(CommunicationPath.RESET_PASSWORD.index, null)
+            CommunicationPath.ERROR.index -> listener?.error(response.getString("error"))
+        }
     }
 
     override fun onError(error: String) {
