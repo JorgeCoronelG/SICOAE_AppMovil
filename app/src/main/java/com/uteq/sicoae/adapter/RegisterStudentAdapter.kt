@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.uteq.sicoae.model.Register
 import com.uteq.sicoae.R
+import com.uteq.sicoae.model.Student
 
-class RegisterStudentAdapter(var registers: ArrayList<Register>, var resource: Int, var activity: Activity) :
-    androidx.recyclerview.widget.RecyclerView.Adapter<RegisterStudentAdapter.ViewHolder>() {
+class RegisterStudentAdapter(var students: ArrayList<Student>, var resource: Int, var activity: Activity) :
+    RecyclerView.Adapter<RegisterStudentAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(resource, parent, false)
@@ -18,17 +18,25 @@ class RegisterStudentAdapter(var registers: ArrayList<Register>, var resource: I
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val register = registers.get(position)
-        holder.name?.text = register.student?.nombre
-        holder.input?.text = register.entrada
-        holder.output?.text = register.salida
+        val student = students.get(position)
+        holder.name?.text = student.nombre
+
+        if(!student.register!!.entrada!!.isEmpty())
+            holder.input?.text = "Entrada: ${student.register?.entrada}"
+        else
+            holder.input?.text = "Entrada: "+activity.resources.getString(R.string.without_registration)
+
+        if(!student.register!!.salida!!.isEmpty())
+            holder.output?.text = "Salida: ${student.register?.salida}"
+        else
+            holder.output?.text = "Salida: "+activity.resources.getString(R.string.without_registration)
     }
 
     override fun getItemCount(): Int {
-        return registers.size
+        return students.size
     }
 
-    inner class ViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         var view = itemView
         var name: TextView? = null

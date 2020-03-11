@@ -43,7 +43,7 @@ class CalendarFragment : Fragment(), CalendarView.OnDateChangeListener {
         }
         if(!dayOfWeek.isEmpty()){
             val registerStudent = RegisterStudentDialogFragment()
-            registerStudent.setData(dayOfWeek, "${dayOfMonth} / ${month+1} / ${year}")
+            registerStudent.setData(dayOfWeek, "${dayOfMonth}-${month+1}-${year}")
             registerStudent.isCancelable = false
             registerStudent.show(activity?.supportFragmentManager, registerStudent.TAG)
         }

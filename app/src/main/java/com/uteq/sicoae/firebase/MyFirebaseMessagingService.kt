@@ -1,5 +1,6 @@
 package com.uteq.sicoae.firebase
 
+import android.util.Log
 import android.widget.Toast
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -14,7 +15,10 @@ class MyFirebaseMessagingService: FirebaseMessagingService(), DataListener {
     private var tokenController: TokenController? = null
     private var userController: UserController? = null
 
+    val TAG = MyFirebaseMessagingService::class.simpleName
+
     override fun onNewToken(token: String) {
+        Log.d(TAG, token)
         tokenController = TokenController(applicationContext, this)
         userController = UserController(applicationContext, this)
         tokenController?.store(token)

@@ -6,4 +6,4 @@ class Student(
     var nombre: String? = null,
     var grado: Int? = null,
     var grupo: String? = null,
-    var tutor: Tutor? = null)
+    var register: Register? = null)
