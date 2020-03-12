@@ -11,7 +11,7 @@ import com.uteq.sicoae.model.Student
 import com.uteq.sicoae.model.Tutor
 import org.json.JSONObject
 
-class RegisterController(val context: Context, val listener: DataListener?): VolleyListener {
+class RegisterController (val context: Context, val listener: DataListener?): VolleyListener {
 
     var request: CustomRequest? = null
 
@@ -20,11 +20,8 @@ class RegisterController(val context: Context, val listener: DataListener?): Vol
     }
 
     fun getDayRegister(id: Int, date: String){
-        var params = JSONObject()
-        params.put("id", id)
-        params.put("fecha", date)
-        val url = CommunicationPath.GET_DAY_REGISTER.getPath()
-        request?.createRequest(Request.Method.POST, url, params)
+        val url = CommunicationPath.GET_DAY_REGISTER.getPath()+"${id}/${date}"
+        request?.createRequest(Request.Method.GET, url, null)
     }
 
     override fun onSuccess(response: JSONObject) {

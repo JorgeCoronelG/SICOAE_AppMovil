@@ -45,6 +45,7 @@ class TokenController(val context: Context, val listener: DataListener?) : Volle
     override fun onSuccess(response: JSONObject) {
         when(response.getInt("code")){
             CommunicationPath.UPDATE_TOKEN.index -> listener?.success(CommunicationPath.UPDATE_TOKEN.index, null)
+            CommunicationPath.ERROR.index -> listener?.error(response.getString("error"))
         }
     }
 

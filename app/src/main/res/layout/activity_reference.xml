@@ -34,14 +34,12 @@
             android:layout_marginTop="@dimen/margin_items"
             android:layout_marginLeft="@dimen/margin_form"
             android:layout_marginRight="@dimen/margin_form"
-            android:hint="@string/email"
+            android:hint="@string/reference"
             android:background="@drawable/rounded_edittext_states"
             android:padding="@dimen/padding"
             android:textAlignment="center"
             android:focusable="false"
             android:clickable="false"
-
-            android:text="20191229ABC12345"
             />
 
     <LinearLayout

@@ -40,7 +40,7 @@ class ForgotPasswordActivity : AppCompatActivity(), View.OnClickListener, DataLi
         when(v?.id){
             R.id.btn_restore -> {
                 if(etEmail?.text.toString().isEmpty()){
-                    etEmail?.error = resources.getString(R.string.required_email)
+                    etEmail?.error = resources.getString(R.string.required_field)
                 }else{
                     createDialog()
                     userController?.resetPassword(etEmail?.text.toString())

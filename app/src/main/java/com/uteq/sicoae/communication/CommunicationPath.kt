@@ -10,6 +10,9 @@ enum class CommunicationPath(val index: Int) {
     GET_TUTOR(5),
     CHANGE_PASSWORD(6),
     GET_DAY_REGISTER(7),
+    CREATE_REFERENCE(8),
+    GET_REFERENCES(9),
+    UPDATE_REFERENCE(10),
     ERROR(404);
 
     fun getPath(): String{
@@ -22,7 +25,10 @@ enum class CommunicationPath(val index: Int) {
             UPDATE_TOKEN.index -> path = "token/update"
             GET_TUTOR.index -> path = "tutor/get/"
             CHANGE_PASSWORD.index -> path = "usuario/change/password"
-            GET_DAY_REGISTER.index -> path = "registro/find/all"
+            GET_DAY_REGISTER.index -> path = "registro/find/all/"
+            CREATE_REFERENCE.index -> path = "referencia/create"
+            GET_REFERENCES.index -> path = "referencia/find/all/"
+            UPDATE_REFERENCE.index -> path = "referencia/update"
         }
         if(index != 0) path = SERVER.getPath() + path
 

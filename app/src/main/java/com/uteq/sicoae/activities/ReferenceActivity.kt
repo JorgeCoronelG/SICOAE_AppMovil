@@ -47,6 +47,11 @@ class ReferenceActivity : AppCompatActivity(), View.OnClickListener{
 
         notification = Notification(this)
 
+        val intent = intent
+        if(intent != null){
+            etReference?.setText(intent.getStringExtra("referencia"))
+        }
+
         llShare?.setOnClickListener(this)
         llCapture?.setOnClickListener(this)
     }

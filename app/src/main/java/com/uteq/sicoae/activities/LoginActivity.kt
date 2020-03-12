@@ -68,11 +68,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, DataListener {
         etEmail?.setError(null)
         etPassword?.setError(null)
         if(etEmail?.text.toString().isEmpty()) {
-            etEmail?.error = resources.getString(R.string.required_email)
+            etEmail?.error = resources.getString(R.string.required_field)
             validation = false
         }
         if(etPassword?.text.toString().isEmpty()) {
-            etPassword?.error = resources.getString(R.string.required_password)
+            etPassword?.error = resources.getString(R.string.required_field)
             validation = false
         }
         return validation
