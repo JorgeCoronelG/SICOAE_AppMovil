@@ -28,18 +28,16 @@
                 android:layout_marginRight="@dimen/margin_form"
                 />
 
-        <EditText
-                android:id="@+id/et_reference"
+        <TextView
+                android:id="@+id/txt_reference"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_items"
                 android:layout_marginLeft="@dimen/margin_form"
                 android:layout_marginRight="@dimen/margin_form"
-                android:inputType="text"
                 android:background="@drawable/rounded_edittext_states"
                 android:padding="@dimen/padding"
-                android:focusable="false"
-                android:clickable="false"
+                android:textSize="@dimen/size_txt_title_h2"
                 />
 
         <TextView
@@ -54,18 +52,16 @@
                 android:layout_marginRight="@dimen/margin_form"
                 />
 
-        <EditText
-                android:id="@+id/et_student"
+        <TextView
+                android:id="@+id/txt_student"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_items"
                 android:layout_marginLeft="@dimen/margin_form"
                 android:layout_marginRight="@dimen/margin_form"
-                android:inputType="text"
                 android:background="@drawable/rounded_edittext_states"
                 android:padding="@dimen/padding"
-                android:focusable="false"
-                android:clickable="false"
+                android:textSize="@dimen/size_txt_title_h2"
                 />
 
         <TextView

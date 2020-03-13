@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.uteq.sicoae.R
-import com.uteq.sicoae.model.Reference
+import com.uteq.sicoae.model.Student
 
-class ReferenceAdapter(var references: ArrayList<Reference>, var resource: Int, var activity: Activity, var onReferenceListener: OnReferenceListener) :
-    androidx.recyclerview.widget.RecyclerView.Adapter<ReferenceAdapter.ViewHolder>(){
+class ReferenceAdapter(var students: ArrayList<Student>, var resource: Int, var activity: Activity, var onReferenceListener: OnReferenceListener) :
+    RecyclerView.Adapter<ReferenceAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(resource, parent, false)
@@ -19,17 +19,17 @@ class ReferenceAdapter(var references: ArrayList<Reference>, var resource: Int, 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val reference = references.get(position)
-        holder.reference?.text = reference.id
-        holder.student?.text = reference.student?.nombre
-        holder.person?.text = reference.persona
+        val student = students.get(position)
+        holder.reference?.text = student.reference?.id
+        holder.student?.text = student.nombre
+        holder.person?.text = student.reference?.persona
     }
 
     override fun getItemCount(): Int {
-        return references.size
+        return students.size
     }
 
-    inner class ViewHolder(itemView: View, onReferenceListener: OnReferenceListener) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener{
+    inner class ViewHolder(itemView: View, onReferenceListener: OnReferenceListener) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
 
         var view = itemView
         var reference: TextView? = null

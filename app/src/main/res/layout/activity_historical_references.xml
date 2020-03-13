@@ -1,25 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".activities.HistoricalReferencesActivity"
-        android:background="@android:color/white"
-        android:orientation="vertical">
+        android:background="@android:color/white">
 
     <include layout="@layout/toolbar"/>
 
-    <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+    <ImageView
+            android:id="@+id/img_loading"
+            android:layout_width="@dimen/size_img_title"
+            android:layout_height="@dimen/size_img_title"
+            android:src="@drawable/ic_loading"
+            android:layout_centerInParent="true"
+            />
+
+    <LinearLayout
+            android:id="@+id/ll_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
             >
 
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_references"
+        <ImageView
+                android:layout_width="@dimen/size_img_title"
+                android:layout_height="@dimen/size_img_title"
+                android:src="@drawable/ic_empty"
+                />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/not_references"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/size_txt_title_h1"
+                />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/ll_historical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+        <include layout="@layout/toolbar"/>
+
+        <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                >
 
-    </androidx.core.widget.NestedScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_references"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
-</LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

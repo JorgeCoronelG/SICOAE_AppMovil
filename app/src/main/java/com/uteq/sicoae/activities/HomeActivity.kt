@@ -134,6 +134,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 checkPermission()
             }
             CommunicationPath.LOGOUT.index -> {
+                dialog?.dismiss()
                 var intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
