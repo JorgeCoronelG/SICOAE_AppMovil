@@ -72,6 +72,10 @@ class Notification(var context: Context) {
             .setContentIntent(pendingIntent)
     }
 
+    fun clickToOpenActivity(pendingIntent: PendingIntent){
+        mBuilder!!.setContentIntent(pendingIntent)
+    }
+
     fun showNotification(notificationId: Int){
         notificacionManager.notify(notificationId, mBuilder!!.build())
     }

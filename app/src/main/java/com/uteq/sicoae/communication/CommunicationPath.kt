@@ -18,7 +18,7 @@ enum class CommunicationPath(val index: Int) {
     fun getPath(): String{
         var path = ""
         when(index){
-            SERVER.index -> path = "http://192.168.0.8:8000/api/"
+            SERVER.index -> path = "http://192.168.0.4:8000/api/"
             LOGIN.index -> path = "usuario/login"
             LOGOUT.index -> path = "token/delete/"
             RESET_PASSWORD.index -> path = "usuario/reset/password/"
