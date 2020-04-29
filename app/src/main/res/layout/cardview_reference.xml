@@ -27,7 +27,7 @@
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                android:weightSum="6"
+                android:weightSum="8"
                 android:orientation="vertical"
                 >
 
@@ -67,7 +67,7 @@
                     android:id="@+id/txt_student"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/size_txt_body"
                     android:gravity="top|left"
@@ -88,7 +88,7 @@
                     android:id="@+id/txt_person"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/size_txt_body"
                     android:gravity="top|left"
